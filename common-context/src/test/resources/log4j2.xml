@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="debug">
+    <properties>
+        <Property name="baseDir">/data/logs/request-context</Property>
+        <property name="PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} [%traceId] [%t] %-5level %F(%L) -%m%n</property>
+    </properties>
+    <appenders>
+        <Console name="ConsoleLog" target="SYSTEM_OUT">
+            <ThresholdFilter level="debug" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="${PATTERN}"/>
+        </Console>
+    </appenders>
+    <Loggers>
+        <Root level="debug">
+            <appender-ref ref="ConsoleLog"/>
+        </Root>
+    </Loggers>
+</Configuration>
